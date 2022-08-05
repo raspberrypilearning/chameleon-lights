@@ -5,7 +5,7 @@
 In this step, you will set up your SenseHAT and create the first from of your animation. 
 </div>
 <div>
-![A screenshot of what will be achieved by the end of this step.](images/step-two-output.PNG){:width="300px"}
+![A short animation showing the humidity slider being scrolled to the right and the image on the SenseHAT changing to an half filled water droplet.](images/humidity-medium.gif){:width="300px"}
 </div>
 </div>
 
