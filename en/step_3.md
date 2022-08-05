@@ -1,7 +1,16 @@
-## What next?
+## Draw your chameleon
 
-If you are following the [PathwayName](https://projects.raspberrypi.org/en/raspberrypi/pathway-name) pathway, you can move on to the [ProjectName](https://projects.raspberrypi.org/en/projects/project-name) project. In this project, you will make a (add description here).
+<div style="display: flex; flex-wrap: wrap">
+<div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
+In this step, you will create the rest of the frames for your animation. 
+</div>
+<div>
+![An animation of what will be achieved by the end of this step.](images/step-three-output.gif){:width="300px"}
+</div>
+</div>
 
-![ProjectName project](images/projectname-project.png)
+### Add frames 2, 3 and 4
 
-If you want to have more fun exploring Scratch, then you could try out any of [these projects](https://projects.raspberrypi.org/en/projects?software%5B%5D=scratch&curriculum%5B%5D=%201).
+
+
+--- save ---

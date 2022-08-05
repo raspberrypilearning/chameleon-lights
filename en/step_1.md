@@ -1,59 +1,46 @@
 ## Introduction
 
-Add project description here. What will learners be making? Broadly what skills will they be learning?
+In this project, you will create a cute chameleon character that detects the environment, then changes colour and gives a humidity reading.
 
-### What you will make
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+A <span style="color: #0faeb0">chameleon</span> is ...
+</p>
+
+You will:
++ Use the colour and humidity sensors on the SenseHAT
++ Use a while loop to continuously detect for sensor data changes
++ Use if statements to display images based on sensor data
+
+You will need:
++ A web browser for the SenseHAT emulator
+
+[[[rpi-sensehat-emulator]]]
+
+Optional:
++ A Raspberry Pi computer
++ A SenseHAT
+
+[[[rpi-sensehat-attach]]]
+
+**Tip**: The colour sensor is only available on the latest version of the SenseHAT. You can use the emulator as an alternative. 
 
 --- no-print ---
-Add instructions for interacting with the embedded content here.
+--- task ---
+### Click Run and try it
+<div style="display: flex; flex-wrap: wrap">
+<div style="flex-basis: 175px; flex-grow: 1">  
+Change the colour sensor colour and the humidity values to see what happens to the chameleon and the water droplet.
 
-<div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/160619869/?autostart=false" frameborder="0"></iframe>
+**Tip**: You will need to click off the window before the colour is registered.
+
 </div>
+</div>
+<div class="trinket">
+<iframe src="https://trinket.io/embed/python/c387d50d68?outputOnly=true&runOption=run" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+--- /task ---
 --- /no-print ---
 
 --- print-only ---
-![Complete project](images/showcase_static.png)
+![Completed project](images/solution.PNG)
 --- /print-only ---
-
---- collapse ---
----
-title: What you will need
----
-### Hardware
-
-+ A computer or tablet capable of running Scratch 3
-
-### Software
-
-+ Scratch 3 (either [online](https://scratch.mit.edu/){:target="_blank"} or [offline](https://scratch.mit.edu/download){:target="_blank"})
-+ Python 3
-+ This project can be completed in a web browser using [trinket.io](https://trinket.io/)
-
-### Downloads
-
-+ Download the project [starter file](https://rpf.io/p/en/projectName-go){:target="_blank"} if working offline
-
---- /collapse ---
-
---- collapse ---
----
-title: What you will learn
----
-
-+ Learning objective 1
-+ Learning objective 2
-+ Learning objective 3
-
---- /collapse ---
-
---- collapse ---
----
-title: Additional information for educators
----
-
-You can download the completed project [here](https://rpf.io/p/en/projectName-get){:target="_blank"}.
-
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/projectName/print){:target="_blank"}.
-
---- /collapse ---

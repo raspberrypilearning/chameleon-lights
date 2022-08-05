@@ -1,23 +1,23 @@
-## Step title
+## Sense the humidity
 
-Add an introductory sentence. What will learners achieve by the end of this step?
+<div style="display: flex; flex-wrap: wrap">
+<div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
+In this step, you will set up your SenseHAT and create the first from of your animation. 
+</div>
+<div>
+![A screenshot of what will be achieved by the end of this step.](images/step-two-output.PNG){:width="300px"}
+</div>
+</div>
 
---- task ---
-
-If working **online**, open the [starter project](https://rpf.io/p/en/projectName-on){:target="_blank"} in Scratch.
- 
-If working **offline**, open the project [starter file](https://rpf.io/p/en/projectName-get){:target="_blank"} in the Scratch offline editor. If you need to download and install Scratch, you can find it [here](https://scratch.mit.edu/download){:target="_blank"}.
-
-You should see...
- 
-![starter project](images/starter_project.png)
-
---- /task ---
+### Draw the water droplets
 
 --- task ---
 
-Step content...
+Open the [chameleon lights starter project](https://trinket.io/html/b7a6fc82b2){:target="_blank"}.
 
 --- /task ---
+
+### Sense the humidity
+
 
 --- save ---
