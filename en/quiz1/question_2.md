@@ -17,8 +17,7 @@ line_numbers: true
 line_number_start: 10
 line_highlights: 
 ---
-  sleep(2 * sense.colour.integration_time) # Sense the colour
-  red, green, blue, clear = sense.colour.colour # Store the readings
+  red, green, blue = sense.colour.colour[0:3] # Store the readings
   sensed_colour = (blue, green, red) # Store the RGB values
   sense.clear(sensed_colour) # Block the colour on the matrix
 --- /code ---
@@ -29,19 +28,11 @@ line_highlights:
 
   --- feedback ---
 
-Try again, this line of code senses the colour. 
+Try again, this line of code stores the colour readings from the sensor. 
 
   --- /feedback ---
 
-- ( ) Line 11
-
-  --- feedback ---
-
-Have another go. This line of code stores the sensor readings. 
-
-  --- /feedback ---
-
-- (x) Line 12
+- (x) Line 11
 
   --- feedback ---
 
@@ -49,7 +40,7 @@ Correct! The RGB colour values have been stored in the wrong order which will pr
 
   --- /feedback ---
 
-- ( ) Line 13
+- ( ) Line 12
 
   --- feedback ---
 
