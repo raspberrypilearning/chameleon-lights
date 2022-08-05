@@ -3,7 +3,7 @@
 In this project, you will create a cute chameleon character that detects the environment, then changes colour and gives a humidity reading.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-A <span style="color: #0faeb0">chameleon</span> is ...
+A <span style="color: #0faeb0">chameleon</span> is a type of lizard that has developed the ability to adapt its skin colour to its surroundings. They have a very long tongue to help them catch bugs at a distance. They also have a long, curling tale to enable them to sit securely on tree branches.
 </p>
 
 You will:
