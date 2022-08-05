@@ -10,7 +10,7 @@ In this step, you will create a function to draw your chameleon. The function wi
 </div>
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-<span style="color: #0faeb0">Functions</span> ...
+<span style="color: #0faeb0">Functions</span> are blocks of code designed for a specific tasks that can be called whenever they are needed. This project uses a function for drawing a chameleon based on the colour that has been sensed by the SenseHAT colour sensor.
 </p>
 
 ### Create your chameleon function
