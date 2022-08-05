@@ -1,0 +1,21 @@
+---
+title: Chameleon lights
+hero_image: images/banner.png
+description: Create a cute chameleon character that detects the environment, then changes colour and gives a humidity reading.
+version: 4
+listed: false
+copyedit: false
+last_tested: "2021-03-26"
+steps:
+  - title: Introduction
+  - title: Sense the humidity
+  - title: Draw your chameleon
+  - title: Sense the colour
+  - title: Reflection
+    knowledge_quiz:
+      path: quiz1
+      version: 1
+      questions: 3
+      passing_score: 3
+  - title: Upgrade your project
+  - title: What next?
