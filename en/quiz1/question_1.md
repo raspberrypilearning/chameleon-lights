@@ -14,31 +14,25 @@ Have fun!
 legend: Question 1 of 3
 ---
 
+A CoderDojo ninja has written some code to check if the humidity is **less than 50%**. They can't remember which symbol they should use for **less than**. 
 
+Which symbol should they use?
 
 --- choices ---
 
-- ( ) 
+- ( ) `>`
 
   --- feedback ---
 
-
+Try again. This is the greater than symbol.
 
   --- /feedback ---
 
-- (x) 
+- (x) `<`
 
   --- feedback ---
 
-
-
-  --- /feedback ---
-
-- ( ) 
-
-  --- feedback ---
-
-
+Excellent! This is the less than symbol. 
 
   --- /feedback ---
 

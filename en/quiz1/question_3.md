@@ -5,34 +5,56 @@
 legend: Question 3 of 3
 ---
 
+Your chameleon lights project used an `if` statement to display an image based on different conditions. 
 
+Which line of code checked if the humidity was low?
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 94
+line_highlights: 
+---
+while True: # Forever
+
+  humidity = sense.get_humidity() # Take a reading from the humidity sensor
+  if humidity > 75: # If the reading is higher than 75
+    sense.set_pixels(humidity_high) # Display the humidity high image
+  elif humidity < 40: # If the reading is less than 40
+    sense.set_pixels(humidity_low)
+  else:
+    sense.set_pixels(humidity_medium) # Display the medium humidity image
+  sleep(1)
+--- /code ---
 
 --- choices ---
 
-- ( )
+- ( ) Line 97
 
 
   --- feedback ---
 
-
+Try again. This line of code checks if the `humidity` is high. 
 
   --- /feedback ---
 
-- (x) 
+- (x) Line 99
 
 
   --- feedback ---
 
-
+Excellent! This line of code checks if the `humidity` is low. 
 
   --- /feedback ---
 
-- ( ) 
+- ( ) Line 101
 
 
   --- feedback ---
 
-
+Have another go. This line of code is used to say what should happen if the conditions in the statements above have not been met. 
 
   --- /feedback ---
 

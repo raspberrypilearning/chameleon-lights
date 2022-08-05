@@ -20,7 +20,7 @@ You could:
 <iframe src="https://trinket.io/embed/python/c290385ba7?outputOnly=true&runOption=run" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 </div>
 
-[View the code](https://trinket.io/library/trinkets/c290385ba7){:target="_blank"} for the upgraded project.
+[View the code](https://trinket.io/library/trinkets/c290385ba7){:target="_blank"} for this upgraded project.
 
 --- /task ---
 
