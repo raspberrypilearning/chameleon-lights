@@ -2,7 +2,7 @@
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will set up your SenseHAT and create the first from of your animation. 
+In this step, you will detect the humidity using a sensor and display images on the LED Matrix to reflect the reading. 
 </div>
 <div>
 ![A short animation showing the humidity slider being scrolled to the right and the image on the SenseHAT changing to an half filled water droplet.](images/humidity-medium.gif){:width="300px"}
@@ -15,7 +15,7 @@ In this step, you will set up your SenseHAT and create the first from of your an
 
 Open the [chameleon lights starter project](https://trinket.io/html/388a90e4b6){:target="_blank"}.
 
-The code for setting up the SenseHAT has been entered for you.
+**Tip**: The code for setting up the SenseHAT has been entered for you.
 
 --- /task ---
 
@@ -27,7 +27,7 @@ Your project is going to use a water droplet image to demonstrate the **humidity
 
 --- task ---
 
-Find the comment ``.
+Find the comment `# Colour palette`.
 
 Enter the code to set up your colour palette.
 
@@ -77,6 +77,8 @@ humidity_low = [
 
 --- /task ---
 
+--- task ---
+
 Find the `# Humidity medium` comment.
 
 Enter the code for a medium humidity image.
@@ -101,6 +103,8 @@ humidity_medium = [
   b, b, w, w, w, w, b, b, 
   b, b, b, w, w, b, b, b]
 --- /code ---
+
+--- /task ---
 
 --- task ---
 
