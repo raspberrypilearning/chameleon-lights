@@ -9,19 +9,21 @@ If you have time then you can use these ideas to help your extend your chameleon
 
 You could:
 
-+ Create a second function for the chameleon where the tail moves. 
 + Animate the water drops so that they drop from the top of the screen.
 + Change the water drop images to something different. It could be
-    + A bucket
-    + A tap
-    + A letter (e.g. H, M, F)
+      + A bucket
+      + A tap
+      + A letter (e.g. H, M, F)
++ Create a second function for the chameleon where the tail moves. 
 
 --- /task ---
 
 **Click Run to see an example upgrade project**
 
+[View the code](https://trinket.io/library/trinkets/c290385ba7){:target="_blank"} for the upgraded project.
+
 <div class="trinket">
-<iframe src="https://trinket.io/embed/python/c387d50d68?outputOnly=true&runOption=run" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python/c290385ba7?outputOnly=true&runOption=run" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 </div>
 
 --- collapse ---
