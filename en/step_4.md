@@ -39,9 +39,9 @@ sense.color.integration_cycles = 64 # The interval at which the reading will be 
 
 Go back to your `while` loop and find the line of code `sensed_colour = (0, 255, 0)`.
 
-Above this line of code, enter two new lines of code that we take the reading from the colour sensor and store them.
+Above this line of code, enter a new line of code that will take the readings from the colour sensor and store them.
 
-**Tip**: Make room for your new lines of code by pressing the enter key.
+**Tip**: Make room for your new line of code by pressing the enter key.
 
 --- code ---
 ---
@@ -49,7 +49,7 @@ language: python
 filename: main.py
 line_numbers: true
 line_number_start: 76
-line_highlights: 87-88
+line_highlights: 87
 ---
 while True: # Forever
 
@@ -62,8 +62,7 @@ while True: # Forever
     sense.set_pixels(humidity_medium) # Display the medium humidity image
   sleep(1)
   
-  sleep(2 * sense.colour.integration_time) # Sense the colour
-  red, green, blue, clear = sense.colour.colour # Store the sensor readings
+  red, green, blue = sense.colour.colour[0:3] # Store the sensor readings
   sensed_colour = (0, 255, 0)
   sense.set_pixels(chameleon(sensed_colour)) # Draw the chameleon using the sense colour variable
   sleep(1)
@@ -75,16 +74,17 @@ You now have the actual readings from the colour sensor. These can now be stored
 
 --- task ---
 
+Replace the `0, 255, 0` RGB colour values with the variables `red, green, blue`.
+
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
 line_number_start: 87
-line_highlights: 89
+line_highlights: 88
 ---
-  sleep(2 * sense.colour.integration_time) # Sense the colour
-  red, green, blue, clear = sense.colour.colour # Store the sensor readings
+  red, green, blue = sense.colour.colour[0:3] # Store the sensor readings
   sensed_colour = (red, green, blue)
   sense.set_pixels(chameleon(sensed_colour)) # Draw the chameleon using the sense colour variable
   sleep(1)
