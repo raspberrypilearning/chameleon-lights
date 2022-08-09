@@ -1,56 +1,170 @@
-## Sense the colour
+## Draw your chameleon
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will set up the colour sensor and use it to sense the colour in the environment. This colour will then be used to colour in your chameleon. 
+In this step, you will create a function to draw a green chameleon and display it on the LED matrix. 
 </div>
 <div>
-![A short animation showing the colour changing on the sensor and the chameleon changing to match the colour.](images/step-four-output.gif){:width="300px"}
+![An animation of what will be achieved by the end of this step.](images/step-three-output.gif){:width="300px"}
 </div>
 </div>
 
-### Setup the colour sensor
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+<span style="color: #0faeb0">Functions</span> are blocks of code designed for specific tasks. You can define your own functions and then your group of code can then be called whenver you want to reuse it.
+</p>
+
+### Create your chameleon function
 
 --- task ---
 
-Find the `# Set up the colour sensor` comment.
+Find the `# Chameleon` comment.
 
-Enter the code to set up the colour sensor.
+Enter the code `def chameleon():` to define your `chameleon` function. 
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 10
-line_highlights: 12-13
+line_number_start: 19
+line_highlights: 21
 ---
-# Set up the colour sensor
+# Chameleon
 
-sense.color.gain = 60 # Set the sensitivity of the sensor
-sense.color.integration_cycles = 64 # The interval at which the reading will be taken
+def chameleon():
 --- /code ---
 
 --- /task ---
 
-### Use the colour sensor to colour in the chameleon
-
 --- task ---
 
-Go back to your `while` loop and find the line of code `sensed_colour = (0, 255, 0)`.
+Inside your `def chameleon` function. Enter code to create a variable called `c` that will store the colour of the chameleon. 
 
-Above this line of code, enter a new line of code that will take the readings from the colour sensor and store them.
-
-**Tip**: Make room for your new line of code by pressing the enter key.
+Set the colour to green `(0, 255, 0)`.
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 76
-line_highlights: 87
+line_number_start: 19
+line_highlights: 23
 ---
+# Chameleon
+
+def chameleon():
+  
+  c = (0, 255, 0) # Store the colour of the chameleon in the variable called c
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+Underneath the variable line of code, create a list to draw your chameleon. 
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 19
+line_highlights: 25-33
+---
+# Chameleon
+
+def chameleon():
+  
+  c = (0, 255, 0) # Store the colour of the chameleon in the variable called c
+
+  chameleon = [ 
+    b, b, b, b, b, b, b, b, 
+    b, c, b, b, b, b, b, b, 
+    c, b, c, c, c, c, b, b, 
+    c, c, c, c, c, c, c, b, 
+    b, b, c, c, c, c, c, b, 
+    b, c, b, c, b, b, c, b, 
+    b, b, b, b, b, c, b, b, 
+    b, b, b, b, c, b, b, b]
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+Underneath the code to draw your chameleon. Enter code to **return** the chameleon list that will be used to draw the chameleon on the LED matrix.
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 19
+line_highlights: 35
+---
+# Chameleon
+
+def chameleon():
+  
+  c = (0, 255, 0) # Store the colour of the chameleon in the variable called c
+
+  chameleon = [
+    b, b, b, b, b, b, b, b, 
+    b, c, b, b, b, b, b, b, 
+    c, b, c, c, c, c, b, b, 
+    c, c, c, c, c, c, c, b, 
+    b, b, c, c, c, c, c, b, 
+    b, c, b, c, b, b, c, b, 
+    b, b, b, b, b, c, b, b, 
+    b, b, b, b, c, b, b, b]
+
+  return chameleon
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+Find your `while` loop and add a `sleep(1)` line of code to make sure that the humidity image displays for 1 second.
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 73
+line_highlights: 84
+---
+# Display images based on humidity and colour sensor readings
+
+while True: # Forever
+
+  humidity = sense.get_humidity() # Take a reading from the humidity sensor
+  if humidity > 75: # If the reading is higher than 75
+    sense.set_pixels(humidity_high) # Display the humidity high image
+  elif humidity < 40: # If the reading is less than 40
+    sense.set_pixels(humidity_low)
+  else:
+    sense.set_pixels(humidity_medium) # Display the medium humidity image
+  sleep(1)
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+Leave a space underneath the `sleep(1)` line of code and enter code that will create a variable for the `sensed_colour` and draw the chameleon on the LED matrix. 
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 73
+line_highlights: 85-87
+---
+# Display images based on humidity and colour sensor readings
+
 while True: # Forever
 
   humidity = sense.get_humidity() # Take a reading from the humidity sensor
@@ -62,31 +176,24 @@ while True: # Forever
     sense.set_pixels(humidity_medium) # Display the medium humidity image
   sleep(1)
   
-  red, green, blue = sense.colour.colour[0:3] # Store the sensor readings
-  sensed_colour = (0, 255, 0)
-  sense.set_pixels(chameleon(sensed_colour)) # Draw the chameleon using the sense colour variable
-  sleep(1)
+  sense.set_pixels(chameleon()) # Draw the chameleon 
 --- /code ---
 
 --- /task ---
 
-You now have the actual readings from the colour sensor. These can now be stored in the `sensed_colour` variable to be used to draw the chameleon.
-
 --- task ---
 
-Replace the `0, 255, 0` RGB colour values with the variables `red, green, blue`.
+Add another `sleep(1)` to the bottom of your `while` loop to allow you to see the chameleon for 1 second.
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 87
-line_highlights: 88
+line_number_start: 86
+line_highlights: 87
 ---
-  red, green, blue = sense.colour.colour[0:3] # Store the sensor readings
-  sensed_colour = (red, green, blue)
-  sense.set_pixels(chameleon(sensed_colour)) # Draw the chameleon using the sense colour variable
+  sense.set_pixels(chameleon()) # Draw the chameleon using the sense colour variable
   sleep(1)
 --- /code ---
 
@@ -94,13 +201,12 @@ line_highlights: 88
 
 --- task ---
 
-**Test**: Click Run and test your code. You should be able to change the colour on the sensor and see your chameleon change. 
+**Test**: Click Run and test your code. You should see your water droplet image, followed by a green chameleon image.
 
-![A short animation showing the colour changing on the sensor and the chameleon changing to match the colour.](images/step-four-output.gif){:width="300px"}
+**Debug:** Check your code matches the examples above. Make sure your code is indented correctly. 
 
-<mark>How does this work with the physical sensehat? Do they stick some colour paper in front of it?</mark>
+![A short animation showing the water droplet appearing on the LED matrix followed by the green chameleon.](images/step-three-output.gif){:width="300px"}
 
 --- /task ---
-
 
 --- save ---
