@@ -5,7 +5,7 @@
 In this step, you will detect the humidity using the humidity sensor then display the reading. 
 </div>
 <div>
-![A short animation showing the humidity slider being scrolled to the right and reading value being displayed on the LED matix.](images/humidity-reading.gif){:width="300px"}
+![A short animation showing the humidity slider being scrolled to the right and reading value being displayed on the LED matrix.](images/humidity-reading.gif){:width="300px"}
 </div>
 </div>
 
@@ -14,6 +14,25 @@ In this step, you will detect the humidity using the humidity sensor then displa
 Open the [chameleon lights starter project](https://trinket.io/html/388a90e4b6){:target="_blank"}.
 
 **Tip**: The code for setting up the SenseHAT has been entered for you.
+
+--- collapse ---
+---
+title: Copying a starter project to run on your Raspberry Pi
+---
+
+Open the [starter project](https://trinket.io/html/388a90e4b6){:target="_blank"} as normal.
+
+Click into the Trinket script editor and press `Ctrl + A` on the keyboard to select all the text. 
+
+Press `Ctrl + C` to copy your selection.
+
+Open a new window in Thonny on your Raspberry Pi.
+
+Press `Ctrl + V` to paste your selection into the new Thonny window.
+
+Save your work in Thonny by pressing `Ctrl + S` and entering a file name. 
+
+--- /collapse ---
 
 --- /task ---
 

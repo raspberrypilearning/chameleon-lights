@@ -7,9 +7,9 @@ A <span style="color: #0faeb0">chameleon</span> is a type of lizard that has dev
 </p>
 
 You will:
-+ Use the colour and humidity sensors on the SenseHAT
-+ Use a while loop to continuously detect for sensor data changes
-+ Use if statements to display images based on sensor data
++ Use the **colour** and **humidity sensors** on the SenseHAT
++ Use a **while loop** to continuously detect for sensor data changes
++ Use **if statements** to display images based on sensor data
 
 You will need:
 + A web browser for the SenseHAT emulator
