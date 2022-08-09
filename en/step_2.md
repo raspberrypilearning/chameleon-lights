@@ -144,6 +144,10 @@ sense.show_message(str(humidity)) # Display the reading from the humidity sensor
 
 You can use a `while` loop to continuously read data from the humidity sensor. 
 
+<p style='border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;'>
+A **while loop** keeps running repeatedly as long as the condition is true. In this instance, you are setting the condition for the loop to **always** be true - so the loop will run forever (or until you stop it by breaking the program).
+</p>
+
 --- task ---
 
 Find the comment `# Display images based on humidity and colour sensor readings`.
