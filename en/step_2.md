@@ -95,7 +95,16 @@ sense.show_message(str(humidity)) # Display the reading from the humidity sensor
 
 ![A short animation showing the humidity slider set to x and the scrolling message x shown on the LED matrix.](images/humidity-display.gif){:width="300px"}
 
-<mark>NEED AN INGREDIENT FOR TESTING HUMIDITY ON THE ACTUAL SENSEHAT!!!</mark>
+--- collapse ---
+---
+title: Changing the humidity on the SenseHAT
+---
+
+If you aren't working on the emulator, one way to quickly increase the humidity of the environment around your SenseHAT is to cup it in your hands (or put it in a plastic bag) and breathe gently onto it. The moisture present in your breath should be enough to detect a change!
+
+When writing your code, it pays to record the **ambient reading** or the sensor you're using - that way you can test easily without having to make huge changes in the environment.
+
+--- /collapse ---
 
 --- /task ---
 
