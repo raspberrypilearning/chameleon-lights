@@ -1,141 +1,225 @@
-## Draw your chameleon
+## Visualise the humidity
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will create a function to draw your chameleon. The function will allow you to change the colour of your chameleon based on the colour reading in the next step. 
+In this step, you will detect the humidity using a sensor and display images on the LED Matrix to reflect the reading. 
 </div>
 <div>
-![An animation of what will be achieved by the end of this step.](images/step-three-output.gif){:width="300px"}
+![A short animation showing the humidity slider being scrolled to the right and the image on the SenseHAT changing to an half filled water droplet.](images/humidity-medium.gif){:width="300px"}
 </div>
 </div>
+
+### Draw the water droplets
+
+--- task ---
+
+Open the [chameleon lights starter project](https://trinket.io/html/388a90e4b6){:target="_blank"}.
+
+**Tip**: The code for setting up the SenseHAT has been entered for you.
+
+--- /task ---
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-<span style="color: #0faeb0">Functions</span> are blocks of code designed for a specific tasks that can be called whenever they are needed. This project uses a function for drawing a chameleon based on the colour that has been sensed by the SenseHAT colour sensor.
+<span style="color: #0faeb0">Humidity</span> is a measurement of how much water vapour there is in the air. 
 </p>
 
-### Create your chameleon function
+Your project is going to use a water droplet image to demonstrate the **humidity levels** in the environment. A full droplet means high humidity, an empty droplet means low humidity and a half filled droplet means medium humidity. 
 
 --- task ---
 
-Find the `# Chameleon` comment.
+Find the comment `# Colour palette`.
 
-Enter the code `def chameleon(sensed_colour):` to define your `chameleon` function. 
-
-**Tip**: `sensed_colour` between the brackets will be used to pass the value of the **sensed colour** into your function. You will use this alongside the colour sensor in the next step.
+Enter the code to set up the variables in your colour palette.
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 19
-line_highlights: 21
+line_number_start: 14
+line_highlights: 16-17
 ---
-# Chameleon
+# Colour palette
 
-def chameleon(sensed_colour):
+w = (0, 0, 255) # Water drop colour
+b = (255, 255, 255) # Background colour
 --- /code ---
 
 --- /task ---
 
+
 --- task ---
 
-Inside your `def chameleon` function. Enter code to create a variable that will store the `sensed_colour` value. 
+Find the `# Humidity low` comment.
+
+Create a list to represent a low humidity image. 
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 19
-line_highlights: 23
----
-# Chameleon
-
-def chameleon(sensed_colour):
-  
-  c = sensed_colour # Store the sensed_colour value in the variable called c
---- /code ---
-
---- /task ---
-
---- task ---
-
-Underneath the `c = sensed_colour` line of code, enter code to draw your chameleon. 
-
-**Tip**: The `c` variable will be used to display the colour that has been sensed by the colour sensor.
-
---- code ---
----
-language: python
-filename: main.py
-line_numbers: true
-line_number_start: 19
+line_number_start: 23
 line_highlights: 25-33
 ---
-# Chameleon
+# Humidity low
 
-def chameleon(sensed_colour):
-  
-  c = sensed_colour # Store the sensed_colour value in the variable called c
-
-  chameleon = [ 
-    b, b, b, b, b, b, b, b, 
-    b, c, b, b, b, b, b, b, 
-    c, b, c, c, c, c, b, b, 
-    c, c, c, c, c, c, c, b, 
-    b, b, c, c, c, c, c, b, 
-    b, c, b, c, b, b, c, b, 
-    b, b, b, b, b, c, b, b, 
-    b, b, b, b, c, b, b, b]
+humidity_low = [
+  b, b, b, b, w, b, b, b, 
+  b, b, b, w, w, b, b, b, 
+  b, b, w, b, b, w, b, b, 
+  b, b, w, b, b, w, b, b, 
+  b, w, b, b, b, b, w, b, 
+  b, w, b, b, b, b, w, b, 
+  b, b, w, b, b, w, b, b, 
+  b, b, b, w, w, b, b, b]
 --- /code ---
 
 --- /task ---
 
 --- task ---
 
-Underneath the code to draw your chameleon. Enter code to **return** the chameleon list that will be used to draw the chameleon on the LED matrix.
+Find the `# Humidity medium` comment.
+
+Create a list to represent a medium humidity image.
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 19
-line_highlights: 35
+line_number_start: 35
+line_highlights: 37-45
 ---
-# Chameleon
+# Humidity medium
 
-def chameleon(sensed_colour):
-  
-  c = sensed_colour # Store the sensed_colour value in the variable called c
-
-  chameleon = [
-    b, b, b, b, b, b, b, b, 
-    b, c, b, b, b, b, b, b, 
-    c, b, c, c, c, c, b, b, 
-    c, c, c, c, c, c, c, b, 
-    b, b, c, c, c, c, c, b, 
-    b, c, b, c, b, b, c, b, 
-    b, b, b, b, b, c, b, b, 
-    b, b, b, b, c, b, b, b]
-
-  return chameleon
+humidity_medium = [
+  b, b, b, b, w, b, b, b, 
+  b, b, b, w, w, b, b, b, 
+  b, b, w, b, b, w, b, b, 
+  b, b, w, b, b, w, b, b, 
+  b, w, b, b, b, b, w, b, 
+  b, w, w, w, w, w, w, b, 
+  b, b, w, w, w, w, b, b, 
+  b, b, b, w, w, b, b, b]
 --- /code ---
 
 --- /task ---
 
 --- task ---
 
-Find your `while` loop and add a `sleep(1)` line of code to make sure that the humidity image displays for 1 second.
+Find the `# Humidity high` comment.
+
+Create a list to represent a high humidity image.
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 73
-line_highlights: 84
+line_number_start: 47
+line_highlights: 49-57
+---
+# Humidity high
+
+humidity_high = [
+  b, b, b, b, w, b, b, b, 
+  b, b, b, w, w, b, b, b, 
+  b, b, w, w, w, w, b, b, 
+  b, b, w, w, w, w, b, b, 
+  b, w, w, w, w, w, w, b, 
+  b, w, w, w, w, w, w, b, 
+  b, b, w, w, w, w, b, b, 
+  b, b, b, w, w, b, b, b]
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+Underneath your code for reading the humidity sensor, add in code that will display the `humidity_high` image if the `humidity` is greater than `75`.
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 59
+line_highlights: 64-65
+---
+# Display images based on humidity and colour sensor readings
+
+while True: # Forever
+
+  humidity = sense.get_humidity() # Take a reading from the humidity sensor
+  if humidity > 75: # If the reading is higher than 75
+    sense.set_pixels(humidity_high) # Display the humidity high image
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+**Test**: Click Run and test your code. Slide the humidity sensor value to above `75`, you should see your full water droplet image appear on the screen. 
+
+![A short animation showing the humidity slider being scrolled to the right and the image on the SenseHAT changing to a water droplet.](images/humidity-slide.gif){:width="300px"}
+
+<mark>NEED AN INGREDIENT FOR TESTING HUMIDITY ON THE ACTUAL SENSEHAT!!!</mark>
+
+--- /task ---
+
+--- task ---
+
+**Debug:**
+
+
+
+--- /task ---
+
+--- task ---
+
+Underneath your `sense.set_pixels(humidity_high)` code, enter the code for checking if the `humidity` is less than `40`.
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 59
+line_highlights: 66-67
+---
+# Display images based on humidity and colour sensor readings
+
+while True: # Forever
+
+  humidity = sense.get_humidity() # Take a reading from the humidity sensor
+  if humidity > 75: # If the reading is higher than 75
+    sense.set_pixels(humidity_high) # Display the humidity high image
+  elif humidity < 40: # If the reading is less than 40
+    sense.set_pixels(humidity_low)
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+**Test**: Click Run and test your code. You should see the empty water droplet appear when you slide the `humidity` value to below `40`. 
+
+![A short animation showing the humidity slider being scrolled to the left and the image on the SenseHAT changing to an empty water droplet.](images/humidity-low.gif){:width="300px"}
+
+--- /task ---
+
+--- task ---
+
+Underneath your `sense.set_pixels(humidity_low)` code, enter code to display an image for when the humidity **isn't** high or low.
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 59
+line_highlights: 68-69
 ---
 # Display images based on humidity and colour sensor readings
 
@@ -148,70 +232,16 @@ while True: # Forever
     sense.set_pixels(humidity_low)
   else:
     sense.set_pixels(humidity_medium) # Display the medium humidity image
-  sleep(1)
 --- /code ---
 
 --- /task ---
 
 --- task ---
 
-Leave a space underneath the `sleep(1)` line of code and enter code that will create a variable for the `sensed_colour` and draw the chameleon on the LED matrix. 
+**Test**: Click Run and test your code. It should now display the `humidity_medium` image when the slider value is above 44 and below 76.
 
---- code ---
----
-language: python
-filename: main.py
-line_numbers: true
-line_number_start: 73
-line_highlights: 85-87
----
-# Display images based on humidity and colour sensor readings
-
-while True: # Forever
-
-  humidity = sense.get_humidity() # Take a reading from the humidity sensor
-  if humidity > 75: # If the reading is higher than 75
-    sense.set_pixels(humidity_high) # Display the humidity high image
-  elif humidity < 40: # If the reading is less than 40
-    sense.set_pixels(humidity_low)
-  else:
-    sense.set_pixels(humidity_medium) # Display the medium humidity image
-  sleep(1)
-  
-  sensed_colour = (0, 255, 0)
-  sense.set_pixels(chameleon(sensed_colour)) # Draw the chameleon using the sense colour variable
---- /code ---
-
-**Tip**: The values `(0, 255, 0)` have been placed here to allow you to temporarily test your code. This will be replaced with the **actual** sensed colour in the next step.
+![A short animation showing the humidity slider being scrolled to the right and the image on the SenseHAT changing to an half filled water droplet.](images/humidity-medium.gif){:width="300px"}
 
 --- /task ---
-
---- task ---
-
-Add another `sleep(1)` to the bottom of your `while` loop to allow you to see the chameleon for 1 second.
-
---- code ---
----
-language: python
-filename: main.py
-line_numbers: true
-line_number_start: 86
-line_highlights: 88
----
-  sensed_colour = (0, 255, 0)
-  sense.set_pixels(chameleon(sensed_colour)) # Draw the chameleon using the sense colour variable
-  sleep(1)
---- /code ---
-
---- /task ---
-
---- task ---
-
-**Test**: Click Run and test your code. You should see your water droplet image, followed by a green chameleon image.
-
-![A short animation showing the water droplet appearing on the LED matrix followed by the green chameleon.](images/step-three-output.gif){:width="300px"}
-
---- /task ---
-
 
 --- save ---

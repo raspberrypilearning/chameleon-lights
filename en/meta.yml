@@ -9,6 +9,7 @@ last_tested: "2021-03-26"
 steps:
   - title: Introduction
   - title: Sense the humidity
+  - title: Visualise the humidity
   - title: Draw your chameleon
   - title: Sense the colour
   - title: Reflection

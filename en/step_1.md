@@ -1,9 +1,9 @@
 ## Introduction
 
-In this project, you will create a cute chameleon character that detects the environment, then changes colour and gives a humidity reading.
+In this project, you will create a cute chameleon character that senses colour then changes to that colour. You will also sense humdity then display the reading in a graphic.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-A <span style="color: #0faeb0">chameleon</span> is a type of lizard that has developed the ability to adapt its skin colour to its surroundings. They have a very long tongue to help them catch bugs at a distance. They also have a long, curling tale to enable them to sit securely on tree branches.
+A <span style="color: #0faeb0">chameleon</span> is a type of lizard that has developed the ability to adapt its skin colour to its surroundings. They  have a long, curling tale to enable them to sit securely on tree branches. Humidity is important to chameleons. A chameleon needs the humidity of it's environment to be over 50% to remain healthy. 
 </p>
 
 You will:
@@ -13,8 +13,6 @@ You will:
 
 You will need:
 + A web browser for the SenseHAT emulator
-
-[[[rpi-sensehat-emulator]]]
 
 Optional:
 + A Raspberry Pi computer
@@ -30,8 +28,6 @@ Optional:
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 175px; flex-grow: 1">  
 Change the colour sensor colour and the humidity values to see what happens to the chameleon and the water droplet.
-
-**Tip**: You will need to click off the window before the colour is registered.
 
 </div>
 </div>
