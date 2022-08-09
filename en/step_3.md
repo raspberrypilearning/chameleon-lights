@@ -2,7 +2,7 @@
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will detect the humidity using a sensor and display images on the LED Matrix to reflect the reading. 
+In this step, you will display images on the LED Matrix to reflect the humidity reading. 
 </div>
 <div>
 ![A short animation showing the humidity slider being scrolled to the right and the image on the SenseHAT changing to an half filled water droplet.](images/humidity-medium.gif){:width="300px"}
@@ -11,17 +11,7 @@ In this step, you will detect the humidity using a sensor and display images on 
 
 ### Draw the water droplets
 
---- task ---
-
-Open the [chameleon lights starter project](https://trinket.io/html/388a90e4b6){:target="_blank"}.
-
-**Tip**: The code for setting up the SenseHAT has been entered for you.
-
---- /task ---
-
-<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-<span style="color: #0faeb0">Humidity</span> is a measurement of how much water vapour there is in the air. 
-</p>
+Images are often used to visually show data in a way that is quick for people to read. 
 
 Your project is going to use a water droplet image to demonstrate the **humidity levels** in the environment. A full droplet means high humidity, an empty droplet means low humidity and a half filled droplet means medium humidity. 
 
@@ -137,6 +127,28 @@ humidity_high = [
 
 --- task ---
 
+Delete the line of code `sense.show_message(str(humidity))` as this is no longer needed.
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 59
+line_highlights: 64
+---
+# Display images based on humidity and colour sensor readings
+
+while True: # Forever
+
+  humidity = round(sense.get_humidity(),1) # Take a reading from the humidity sensor
+  
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
 Underneath your code for reading the humidity sensor, add in code that will display the `humidity_high` image if the `humidity` is greater than `75`.
 
 --- code ---
@@ -162,17 +174,9 @@ while True: # Forever
 
 **Test**: Click Run and test your code. Slide the humidity sensor value to above `75`, you should see your full water droplet image appear on the screen. 
 
+**Debug:** Check your code matches the examples above. Make sure you have used  `>` and a `:` in your `if` statement. 
+
 ![A short animation showing the humidity slider being scrolled to the right and the image on the SenseHAT changing to a water droplet.](images/humidity-slide.gif){:width="300px"}
-
-<mark>NEED AN INGREDIENT FOR TESTING HUMIDITY ON THE ACTUAL SENSEHAT!!!</mark>
-
---- /task ---
-
---- task ---
-
-**Debug:**
-
-
 
 --- /task ---
 
@@ -204,6 +208,8 @@ while True: # Forever
 --- task ---
 
 **Test**: Click Run and test your code. You should see the empty water droplet appear when you slide the `humidity` value to below `40`. 
+
+**Debug:** Check your code matches the examples above. Check that you have used colons `:` where needed.  
 
 ![A short animation showing the humidity slider being scrolled to the left and the image on the SenseHAT changing to an empty water droplet.](images/humidity-low.gif){:width="300px"}
 
@@ -239,6 +245,8 @@ while True: # Forever
 --- task ---
 
 **Test**: Click Run and test your code. It should now display the `humidity_medium` image when the slider value is above 44 and below 76.
+
+**Debug:** Check your code matches the examples above. Check that your angle brackets `<, >` are the correct way around. 
 
 ![A short animation showing the humidity slider being scrolled to the right and the image on the SenseHAT changing to an half filled water droplet.](images/humidity-medium.gif){:width="300px"}
 

@@ -9,6 +9,10 @@ In this step, you will set up the colour sensor and use it to sense the colour i
 </div>
 </div>
 
+**Tip**: The values `(0, 255, 0)` have been placed here to allow you to temporarily test your code. This will be replaced with the **actual** sensed colour in the next step.
+
+
+
 ### Setup the colour sensor
 
 --- task ---
@@ -37,9 +41,7 @@ sense.color.integration_cycles = 64 # The interval at which the reading will be 
 
 --- task ---
 
-Go back to your `while` loop and find the line of code `sensed_colour = (0, 255, 0)`.
-
-Above this line of code, enter a new line of code that will take the readings from the colour sensor and store them.
+Go back to your `while` loop and above the line of code `sense.set_pixels(chameleon())` line of code, add code to store and use the sensed colour.
 
 **Tip**: Make room for your new line of code by pressing the enter key.
 
@@ -49,7 +51,7 @@ language: python
 filename: main.py
 line_numbers: true
 line_number_start: 76
-line_highlights: 87
+line_highlights: 87-88
 ---
 while True: # Forever
 
@@ -63,18 +65,16 @@ while True: # Forever
   sleep(1)
   
   red, green, blue = sense.colour.colour[0:3] # Store the sensor readings
-  sensed_colour = (0, 255, 0)
-  sense.set_pixels(chameleon(sensed_colour)) # Draw the chameleon using the sense colour variable
+  sensed_colour = (red, green, blue)
+  sense.set_pixels(chameleon()) # Draw the chameleon using the sense colour variable
   sleep(1)
 --- /code ---
 
 --- /task ---
 
-You now have the actual readings from the colour sensor. These can now be stored in the `sensed_colour` variable to be used to draw the chameleon.
-
 --- task ---
 
-Replace the `0, 255, 0` RGB colour values with the variables `red, green, blue`.
+Add `sensed_colour` between the brackets of your `sense.set_pixels(chameleon())` code. This will be used to pass the value of the **sensed colour** into your function. 
 
 --- code ---
 ---
@@ -82,7 +82,7 @@ language: python
 filename: main.py
 line_numbers: true
 line_number_start: 87
-line_highlights: 88
+line_highlights: 89
 ---
   red, green, blue = sense.colour.colour[0:3] # Store the sensor readings
   sensed_colour = (red, green, blue)
@@ -94,7 +94,44 @@ line_highlights: 88
 
 --- task ---
 
+Find your `chameleon()` function and add `sensed_colour` between the brackets to use it in the function.
+
+Set your `c` variable to `sensed_colour`.
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 20
+line_highlights: 22, 24
+---
+# Chameleon
+
+def chameleon(sensed_colour):
+  
+  c = (sensed_colour) # Store the sensed_colour value in the variable called c
+
+  chameleon = [ 
+      b, b, b, b, b, b, b, b, 
+      b, c, b, b, b, b, b, b, 
+      c, b, c, c, c, c, b, b, 
+      c, c, c, c, c, c, c, b, 
+      b, b, c, c, c, c, c, b, 
+      b, c, b, c, b, b, c, b, 
+      b, b, b, b, b, c, b, b, 
+      b, b, b, b, c, b, b, b]
+      
+  return chameleon
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
 **Test**: Click Run and test your code. You should be able to change the colour on the sensor and see your chameleon change. 
+
+**Debug:** Check your code matches the examples above. Make sure you have passed `sensed_colour` into your function. 
 
 ![A short animation showing the colour changing on the sensor and the chameleon changing to match the colour.](images/step-four-output.gif){:width="300px"}
 

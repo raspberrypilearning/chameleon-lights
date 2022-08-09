@@ -4,7 +4,7 @@ Fantastic! You have made a chameleon change colour based on its environment whil
 
 Answer the three questions below to reflect on what you've learned.
 
-After each question, press submit. You will be guided towards the correct answer. You can do this activity as many times as you want to.
+After each question, press 'Check your answer'. You will be guided towards the correct answer. You can do this activity as many times as you want to.
 
 Have fun!
 
@@ -14,7 +14,7 @@ Have fun!
 legend: Question 1 of 3
 ---
 
-A CoderDojo ninja has written some code to check if the humidity is **less than 50%**. They can't remember which symbol they should use for **less than**. 
+A creator has written some code to check if the humidity is **less than 50%**. They can't remember which symbol they should use for **less than**. 
 
 Which symbol should they use?
 

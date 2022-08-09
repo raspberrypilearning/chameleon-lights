@@ -2,7 +2,7 @@
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will create a function to draw your chameleon. The function will allow you to change the colour of your chameleon based on the colour reading in the next step. 
+In this step, you will create a function to draw a green chameleon and display it on the LED matrix. 
 </div>
 <div>
 ![An animation of what will be achieved by the end of this step.](images/step-three-output.gif){:width="300px"}
@@ -10,7 +10,7 @@ In this step, you will create a function to draw your chameleon. The function wi
 </div>
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-<span style="color: #0faeb0">Functions</span> are blocks of code designed for a specific tasks that can be called whenever they are needed. This project uses a function for drawing a chameleon based on the colour that has been sensed by the SenseHAT colour sensor.
+<span style="color: #0faeb0">Functions</span> are blocks of code designed for specific tasks. You can define your own functions and then your group of code can then be called whenver you want to reuse it.
 </p>
 
 ### Create your chameleon function
@@ -19,9 +19,7 @@ In this step, you will create a function to draw your chameleon. The function wi
 
 Find the `# Chameleon` comment.
 
-Enter the code `def chameleon(sensed_colour):` to define your `chameleon` function. 
-
-**Tip**: `sensed_colour` between the brackets will be used to pass the value of the **sensed colour** into your function. You will use this alongside the colour sensor in the next step.
+Enter the code `def chameleon():` to define your `chameleon` function. 
 
 --- code ---
 ---
@@ -33,14 +31,16 @@ line_highlights: 21
 ---
 # Chameleon
 
-def chameleon(sensed_colour):
+def chameleon():
 --- /code ---
 
 --- /task ---
 
 --- task ---
 
-Inside your `def chameleon` function. Enter code to create a variable that will store the `sensed_colour` value. 
+Inside your `def chameleon` function. Enter code to create a variable called `c` that will store the colour of the chameleon. 
+
+Set the colour to green `(0, 255, 0)`.
 
 --- code ---
 ---
@@ -52,18 +52,16 @@ line_highlights: 23
 ---
 # Chameleon
 
-def chameleon(sensed_colour):
+def chameleon():
   
-  c = sensed_colour # Store the sensed_colour value in the variable called c
+  c = (0, 255, 0) # Store the colour of the chameleon in the variable called c
 --- /code ---
 
 --- /task ---
 
 --- task ---
 
-Underneath the `c = sensed_colour` line of code, enter code to draw your chameleon. 
-
-**Tip**: The `c` variable will be used to display the colour that has been sensed by the colour sensor.
+Underneath the variable line of code, create a list to draw your chameleon. 
 
 --- code ---
 ---
@@ -75,9 +73,9 @@ line_highlights: 25-33
 ---
 # Chameleon
 
-def chameleon(sensed_colour):
+def chameleon():
   
-  c = sensed_colour # Store the sensed_colour value in the variable called c
+  c = (0, 255, 0) # Store the colour of the chameleon in the variable called c
 
   chameleon = [ 
     b, b, b, b, b, b, b, b, 
@@ -106,9 +104,9 @@ line_highlights: 35
 ---
 # Chameleon
 
-def chameleon(sensed_colour):
+def chameleon():
   
-  c = sensed_colour # Store the sensed_colour value in the variable called c
+  c = (0, 255, 0) # Store the colour of the chameleon in the variable called c
 
   chameleon = [
     b, b, b, b, b, b, b, b, 
@@ -178,11 +176,8 @@ while True: # Forever
     sense.set_pixels(humidity_medium) # Display the medium humidity image
   sleep(1)
   
-  sensed_colour = (0, 255, 0)
-  sense.set_pixels(chameleon(sensed_colour)) # Draw the chameleon using the sense colour variable
+  sense.set_pixels(chameleon()) # Draw the chameleon 
 --- /code ---
-
-**Tip**: The values `(0, 255, 0)` have been placed here to allow you to temporarily test your code. This will be replaced with the **actual** sensed colour in the next step.
 
 --- /task ---
 
@@ -196,10 +191,9 @@ language: python
 filename: main.py
 line_numbers: true
 line_number_start: 86
-line_highlights: 88
+line_highlights: 87
 ---
-  sensed_colour = (0, 255, 0)
-  sense.set_pixels(chameleon(sensed_colour)) # Draw the chameleon using the sense colour variable
+  sense.set_pixels(chameleon()) # Draw the chameleon using the sense colour variable
   sleep(1)
 --- /code ---
 
@@ -209,9 +203,10 @@ line_highlights: 88
 
 **Test**: Click Run and test your code. You should see your water droplet image, followed by a green chameleon image.
 
+**Debug:** Check your code matches the examples above. Make sure your code is indented correctly. 
+
 ![A short animation showing the water droplet appearing on the LED matrix followed by the green chameleon.](images/step-three-output.gif){:width="300px"}
 
 --- /task ---
-
 
 --- save ---
