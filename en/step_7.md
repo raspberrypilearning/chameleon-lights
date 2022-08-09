@@ -16,6 +16,8 @@ You could:
       + A letter (e.g. H, M, F)
 + Create a second function for the chameleon where the tail moves. 
 
+[Design a new 8x8 image]
+
 <div class="trinket">
 <iframe src="https://trinket.io/embed/python/c290385ba7?outputOnly=true&runOption=run" width="600" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 </div>
