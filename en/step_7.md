@@ -11,9 +11,9 @@ You could:
 
 + Animate the water drops so that they drop from the top of the screen.
 + Change the water drop images to something different. It could be
-      + A bucket
-      + A tap
-      + A letter (e.g. H, M, F)
+      - A bucket
+      - A tap
+      - A letter (e.g. H, M, F)
 + Create a second function for the chameleon where the tail moves. 
 
 [[[draw-own-image-sensehat]]]
@@ -37,13 +37,3 @@ You can view the [completed project here](https://trinket.io/library/trinkets/c3
 --- /collapse ---
 
 [View the code](https://trinket.io/library/trinkets/c290385ba7){:target="_blank"} for this upgraded project.
-
---- collapse ---
-
----
-title: Completed project
----
-
-You can view the [completed project here](https://trinket.io/library/trinkets/c387d50d68){:target="_blank"}.
-
---- /collapse ---
