@@ -38,8 +38,6 @@ You can view the [completed project here](https://trinket.io/library/trinkets/c3
 
 [View the code](https://trinket.io/library/trinkets/c290385ba7){:target="_blank"} for this upgraded project.
 
---- /task ---
-
 --- collapse ---
 
 ---
