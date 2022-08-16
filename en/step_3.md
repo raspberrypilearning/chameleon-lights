@@ -82,7 +82,7 @@ language: python
 filename: main.py
 line_numbers: true
 line_number_start: 38
-line_highlights: 39-5
+line_highlights: 39-51
 ---
 # Humidity medium
 def humidity_medium():
