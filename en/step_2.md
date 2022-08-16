@@ -5,7 +5,7 @@
 In this step, you will detect the humidity using the humidity sensor then display the reading. 
 </div>
 <div>
-![A short animation showing the humidity slider being scrolled to the right and reading value being displayed on the LED matix.](images/humidity-reading.gif){:width="300px"}
+![A short animation showing the humidity slider being scrolled to the right and reading value being displayed on the LED matrix.](images/humidity-loop.gif){:width="300px"}
 </div>
 </div>
 
@@ -14,6 +14,25 @@ In this step, you will detect the humidity using the humidity sensor then displa
 Open the [chameleon lights starter project](https://trinket.io/html/388a90e4b6){:target="_blank"}.
 
 **Tip**: The code for setting up the SenseHAT has been entered for you.
+
+--- collapse ---
+---
+title: Copying a starter project to run on your Raspberry Pi
+---
+
+Open the [starter project](https://trinket.io/html/388a90e4b6){:target="_blank"} as normal.
+
+Click into the Trinket script editor and press `Ctrl + A` on the keyboard to select all the text. 
+
+Press `Ctrl + C` to copy your selection.
+
+Open a new window in Thonny on your Raspberry Pi.
+
+Press `Ctrl + V` to paste your selection into the new Thonny window.
+
+Save your work in Thonny by pressing `Ctrl + S` and entering a file name. 
+
+--- /collapse ---
 
 --- /task ---
 
@@ -34,11 +53,10 @@ Create a variable called `humidity`. Get the humidity from the sensor then store
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 34
-line_highlights: 36
+line_number_start: 32
+line_highlights: 33
 ---
 # Display images based on humidity and colour sensor readings
-
 humidity = sense.get_humidity() # Take a reading from the humidity sensor
 --- /code ---
 
@@ -57,11 +75,10 @@ The `str()` function converts the reading into a string of characters that can b
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 34
-line_highlights: 37
+line_number_start: 32
+line_highlights: 34
 ---
 # Display images based on humidity and colour sensor readings
-
 humidity = sense.get_humidity() # Take a reading from the humidity sensor
 sense.show_message(str(humidity)) # Display the reading from the humidity sensor
 --- /code ---
@@ -74,15 +91,15 @@ sense.show_message(str(humidity)) # Display the reading from the humidity sensor
 
 **Debug:** Check your code matches the examples above. Make sure your brackets and commas are correct. 
 
-![A short animation showing the humidity slider set to x and the scrolling message x shown on the LED matrix.](images/humidity-display.gif){:width="300px"}
+![A short animation showing the humidity slider set to 44 and the scrolling message 44 shown on the LED matrix. The slider is then moved to 82 and the scrtolling message shows 82.](images/humidity-display.gif){:width="300px"}
 
-<mark>NEED AN INGREDIENT FOR TESTING HUMIDITY ON THE ACTUAL SENSEHAT!!!</mark>
+[[[change-the-humidity]]
 
 --- /task ---
 
 --- task ---
 
-The humidity reading returns to 10 decimal places which is far more accurate than we need to see.
+The humidity reading displays to 10 decimal places which is far more accurate than we need to see.
 
 Change the humidity reading code so that the humity reading is only stored to one decimal place. 
 
@@ -92,10 +109,9 @@ language: python
 filename: main.py
 line_numbers: true
 line_number_start: 34
-line_highlights: 36
+line_highlights: 35
 ---
 # Display images based on humidity and colour sensor readings
-
 humidity = round(sense.get_humidity(),1) # Take a reading from the humidity sensor
 sense.show_message(str(humidity)) # Display the reading from the humidity sensor
 --- /code ---
@@ -108,13 +124,17 @@ sense.show_message(str(humidity)) # Display the reading from the humidity sensor
 
 **Debug:** Check your code matches the examples above. Make sure your brackets and commas are correct. 
 
-![A short animation showing the humidity slider set to x and the scrolling message x shown on the LED matrix.](images/humidity-one-decimal.gif){:width="300px"}
+![A short animation showing the humidity slider set to 12 and the more accurate reading to one decimal place 13.4 shown on the LED matrix.](images/humidity-one-decimal.gif){:width="300px"}
 
 --- /task ---
 
 ### Use a loop to repeatedly sense humidity
 
 You can use a `while` loop to continuously read data from the humidity sensor. 
+
+<p style='border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;'>
+A **while loop** keeps running repeatedly as long as the condition is true. In this instance, you are setting the condition for the loop to **always** be true - so the loop will run forever (or until you stop it by breaking the program).
+</p>
 
 --- task ---
 
@@ -129,11 +149,10 @@ Use the Tab character on your keyboard before each line of humidity code to inde
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 34
-line_highlights: 36-39
+line_number_start: 32
+line_highlights: 33, 35-36
 ---
 # Display images based on humidity and colour sensor readings
-
 while True: # Forever
 
   humidity = round(sense.get_humidity(),1) # Take a reading from the humidity sensor

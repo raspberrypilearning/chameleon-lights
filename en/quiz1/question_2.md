@@ -15,9 +15,19 @@ line_numbers: true
 line_number_start: 10
 line_highlights: 
 ---
-red, green, blue = sense.colour.colour[0:3] # Store the readings
-sensed_colour = (red, green, blue) # Store the RGB values
-sense.clear(sensed_colour) # Fill the matrix with the sensed colour
+c = sense.colour.colour[0:3] # Store the sensed_colour value in the variable called c
+
+  image = [
+    b, b, b, b, b, b, b, b, 
+    b, c, b, b, b, b, b, b, 
+    c, b, c, c, c, c, b, b, 
+    c, c, c, c, c, c, c, b, 
+    b, b, c, c, c, c, c, b, 
+    b, c, b, c, b, b, c, b, 
+    b, b, b, b, b, c, b, b, 
+    b, b, b, b, c, b, b, b]
+    
+sense.set_pixels(image)
 --- /code ---
 
 --- choices ---

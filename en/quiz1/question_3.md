@@ -21,11 +21,11 @@ while True: # Forever
 
   humidity = sense.get_humidity() # Take a reading 
   if humidity > 75: # If the reading is higher than 75
-    sense.set_pixels(humidity_high) # Display image
+    humidity_high() # Display image
   elif humidity < 40: # If the reading is less than 40
-    sense.set_pixels(humidity_low)
+    humidity_low() # Display image
   else:
-    sense.set_pixels(humidity_medium) # Display image
+    humidity_medium() # Display image
   sleep(1)
 --- /code ---
 

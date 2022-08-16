@@ -1,12 +1,12 @@
 ## What next?
 
-If you are following the [Intro to the SenseHAT](https://projects.raspberrypi.org/en/raspberrypi/sense-intro) path, you can move on to the [xxxx](https://projects.raspberrypi.org/en/projects/xxxx) project. In this project, you will make a chameleon that sensing the colours in the environment and copies it.
+If you are following the [Intro to the SenseHAT](https://projects.raspberrypi.org/en/raspberrypi/sense-intro) path, you can move on to the [Ambient art](https://projects.raspberrypi.org/en/projects/ambient-art) project. In this project, you will make a chameleon that sensing the colours in the environment and copies it.
 
 --- print-only ---
 
 <mark>To follow<mark>
 
-![ProjectName project](images/projectname-project.png)
+![](images/ambient-art.png)
 
 --- /print-only ---
 

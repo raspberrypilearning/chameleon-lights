@@ -9,15 +9,11 @@ In this step, you will set up the colour sensor and use it to sense the colour i
 </div>
 </div>
 
-**Tip**: The values `(0, 255, 0)` have been placed here to allow you to temporarily test your code. This will be replaced with the **actual** sensed colour in the next step.
-
-
-
 ### Setup the colour sensor
 
 --- task ---
 
-Find the `# Set up the colour sensor` comment.
+Find the `# Setup the colour sensor` comment.
 
 Enter the code to set up the colour sensor.
 
@@ -26,22 +22,21 @@ Enter the code to set up the colour sensor.
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 10
-line_highlights: 12-13
+line_number_start: 8
+line_highlights: 9-10
 ---
 # Set up the colour sensor
-
 sense.color.gain = 60 # Set the sensitivity of the sensor
 sense.color.integration_cycles = 64 # The interval at which the reading will be taken
 --- /code ---
 
 --- /task ---
 
-### Use the colour sensor to colour in the chameleon
+### Use the colour sensor to colour your background
 
 --- task ---
 
-Go back to your `while` loop and above the line of code `sense.set_pixels(chameleon())` line of code, add code to store and use the sensed colour.
+Go to your `chameleon()` function and add code to store and use the sensed colour as the background colour.
 
 **Tip**: Make room for your new line of code by pressing the enter key.
 
@@ -50,94 +45,107 @@ Go back to your `while` loop and above the line of code `sense.set_pixels(chamel
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 76
-line_highlights: 87-88
----
-while True: # Forever
-
-  humidity = sense.get_humidity() # Take a reading from the humidity sensor
-  if humidity > 75: # If the reading is higher than 75
-    sense.set_pixels(humidity_high) # Display the humidity high image
-  elif humidity < 40: # If the reading is less than 40
-    sense.set_pixels(humidity_low)
-  else:
-    sense.set_pixels(humidity_medium) # Display the medium humidity image
-  sleep(1)
-  
-  red, green, blue = sense.colour.colour[0:3] # Store the sensor readings
-  sensed_colour = (red, green, blue)
-  sense.set_pixels(chameleon()) # Draw the chameleon using the sense colour variable
-  sleep(1)
---- /code ---
-
---- /task ---
-
---- task ---
-
-Add `sensed_colour` between the brackets of your `sense.set_pixels(chameleon())` code. This will be used to pass the value of the **sensed colour** into your function. 
-
---- code ---
----
-language: python
-filename: main.py
-line_numbers: true
-line_number_start: 87
-line_highlights: 89
----
-  red, green, blue = sense.colour.colour[0:3] # Store the sensor readings
-  sensed_colour = (red, green, blue)
-  sense.set_pixels(chameleon(sensed_colour)) # Draw the chameleon using the sense colour variable
-  sleep(1)
---- /code ---
-
---- /task ---
-
---- task ---
-
-Find your `chameleon()` function and add `sensed_colour` between the brackets to use it in the function.
-
-Set your `c` variable to `sensed_colour`.
-
---- code ---
----
-language: python
-filename: main.py
-line_numbers: true
-line_number_start: 20
-line_highlights: 22, 24
+line_number_start: 19
+line_highlights: 24-25
 ---
 # Chameleon
-
-def chameleon(sensed_colour):
+def chameleon():
   
-  c = (sensed_colour) # Store the sensed_colour value in the variable called c
+  c = (0, 255, 0) # Store the colour of the chameleon in the variable called c
 
-  chameleon = [ 
-      b, b, b, b, b, b, b, b, 
-      b, c, b, b, b, b, b, b, 
-      c, b, c, c, c, c, b, b, 
-      c, c, c, c, c, c, c, b, 
-      b, b, c, c, c, c, c, b, 
-      b, c, b, c, b, b, c, b, 
-      b, b, b, b, b, c, b, b, 
-      b, b, b, b, c, b, b, b]
-      
-  return chameleon
+  b = sense.colour.colour[0:3] # Store the sensed_colour value in the variable called c
+  red, green, blue = sense.colour.colour[0:3]
+
+  image = [ 
+    b, b, b, b, b, b, b, b, 
 --- /code ---
 
 --- /task ---
 
 --- task ---
 
-**Test**: Click Run and test your code. You should be able to change the colour on the sensor and see your chameleon change. 
+**Test**: Click Run and test your code. You should be able to change the colour on the sensor and see the background colour change. 
 
-**Debug:** Check your code matches the examples above. Make sure you have passed `sensed_colour` into your function. 
+**Debug:** Check your code matches the examples above. 
 
-![A short animation showing the colour changing on the sensor and the chameleon changing to match the colour.](images/step-four-output.gif){:width="300px"}
+![A short animation showing the colour changing on the sensor and the background colour changing to match the colour.](images/background-colour.gif){:width="300px"}
 
-<mark>How does this work with the physical sensehat? Do they stick some colour paper in front of it?</mark>
+[[[detect-colour-sensehat]]]
 
 --- /task ---
 
+### Make the chameleon adapt to its environment
+
+--- task ---
+
+Underneath the code to sense the background colour. Enter an `if` statement that will detect if the colour sensed has more **red** tones. If it is, it will change the chameleon to the colour red. 
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 19
+line_highlights: 27-28
+---
+# Chameleon
+def chameleon():
+  
+  c = (0, 255, 0) # Store the colour of the chameleon in the variable called c
+  
+  b = sense.colour.colour[0:3] # Store the sensed_colour value in the variable called c
+  red, green, blue = sense.colour.colour[0:3]
+  
+  if red > green and red > blue:
+    c = (255, 0, 0)
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+**Test**: Click Run and test your code. The default colour of your chameleon should be green. If you change the colour sensed to a red tone then the chameleon should change colour to red. 
+
+![A short animation of the chameleon set to green initially. The slider moves the colour sensor to red and the chameleon changes to red.](images/red-chameleon.gif){:width="300px"}
+
+--- /task ---
+
+--- task ---
+
+Now add in **two** `elif`s to change for green and blue tones. If it detects them then the chameleon will change colour. 
+
+--- code ---
+---
+language: python
+filename: main.py
+line_numbers: true
+line_number_start: 19
+line_highlights: 29-32
+---
+# Chameleon
+def chameleon():
+  
+  c = (0, 255, 0) # Store the colour of the chameleon in the variable called c
+  
+  b = sense.colour.colour[0:3] # Store the sensed_colour value in the variable called c
+  red, green, blue = sense.colour.colour[0:3]
+  
+  if red > green and red > blue:
+    c = (255, 0, 0)
+  elif green > red and green > blue:
+    c = (0, 255, 0)
+  elif blue > green and blue > red:
+    c = (0, 0, 255)
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+**Test**: Click Run and test your code. Now if you change your sensed colour to a green tone, the chameleon should turn green. If you change the sensed colour to a blue tone then the chameleon should turn blue. 
+
+![A short animation of the chameleon set to green initially. The slider moves the colour sensor to green and the chameleon changes to green. The slide changes the colour to blue and the chameleon changes to blue.](images/green-blue-chameleon.gif){:width="300px"}
+
+--- /task ---
 
 --- save ---
