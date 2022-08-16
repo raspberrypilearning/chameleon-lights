@@ -5,7 +5,7 @@
 In this step, you will detect the humidity using the humidity sensor then display the reading. 
 </div>
 <div>
-![A short animation showing the humidity slider being scrolled to the right and reading value being displayed on the LED matrix.](images/humidity-reading.gif){:width="300px"}
+![A short animation showing the humidity slider being scrolled to the right and reading value being displayed on the LED matrix.](images/humidity-loop.gif){:width="300px"}
 </div>
 </div>
 
@@ -53,11 +53,10 @@ Create a variable called `humidity`. Get the humidity from the sensor then store
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 34
-line_highlights: 36
+line_number_start: 32
+line_highlights: 33
 ---
 # Display images based on humidity and colour sensor readings
-
 humidity = sense.get_humidity() # Take a reading from the humidity sensor
 --- /code ---
 
@@ -76,11 +75,10 @@ The `str()` function converts the reading into a string of characters that can b
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 34
-line_highlights: 37
+line_number_start: 32
+line_highlights: 34
 ---
 # Display images based on humidity and colour sensor readings
-
 humidity = sense.get_humidity() # Take a reading from the humidity sensor
 sense.show_message(str(humidity)) # Display the reading from the humidity sensor
 --- /code ---
@@ -93,24 +91,15 @@ sense.show_message(str(humidity)) # Display the reading from the humidity sensor
 
 **Debug:** Check your code matches the examples above. Make sure your brackets and commas are correct. 
 
-![A short animation showing the humidity slider set to x and the scrolling message x shown on the LED matrix.](images/humidity-display.gif){:width="300px"}
+![A short animation showing the humidity slider set to 44 and the scrolling message 44 shown on the LED matrix. The slider is then moved to 82 and the scrtolling message shows 82.](images/humidity-display.gif){:width="300px"}
 
---- collapse ---
----
-title: Changing the humidity on the SenseHAT
----
-
-If you aren't working on the emulator, one way to quickly increase the humidity of the environment around your SenseHAT is to cup it in your hands (or put it in a plastic bag) and breathe gently onto it. The moisture present in your breath should be enough to detect a change!
-
-When writing your code, it pays to record the **ambient reading** or the sensor you're using - that way you can test easily without having to make huge changes in the environment.
-
---- /collapse ---
+[[[change-the-humidity]]
 
 --- /task ---
 
 --- task ---
 
-The humidity reading returns to 10 decimal places which is far more accurate than we need to see.
+The humidity reading displays to 10 decimal places which is far more accurate than we need to see.
 
 Change the humidity reading code so that the humity reading is only stored to one decimal place. 
 
@@ -120,10 +109,9 @@ language: python
 filename: main.py
 line_numbers: true
 line_number_start: 34
-line_highlights: 36
+line_highlights: 35
 ---
 # Display images based on humidity and colour sensor readings
-
 humidity = round(sense.get_humidity(),1) # Take a reading from the humidity sensor
 sense.show_message(str(humidity)) # Display the reading from the humidity sensor
 --- /code ---
@@ -136,7 +124,7 @@ sense.show_message(str(humidity)) # Display the reading from the humidity sensor
 
 **Debug:** Check your code matches the examples above. Make sure your brackets and commas are correct. 
 
-![A short animation showing the humidity slider set to x and the scrolling message x shown on the LED matrix.](images/humidity-one-decimal.gif){:width="300px"}
+![A short animation showing the humidity slider set to 12 and the more accurate reading to one decimal place 13.4 shown on the LED matrix.](images/humidity-one-decimal.gif){:width="300px"}
 
 --- /task ---
 
@@ -161,11 +149,10 @@ Use the Tab character on your keyboard before each line of humidity code to inde
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 34
-line_highlights: 36-39
+line_number_start: 32
+line_highlights: 33, 35-36
 ---
 # Display images based on humidity and colour sensor readings
-
 while True: # Forever
 
   humidity = round(sense.get_humidity(),1) # Take a reading from the humidity sensor

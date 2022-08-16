@@ -11,17 +11,6 @@ You will:
 + Use a **while loop** to continuously detect for sensor data changes
 + Use **if statements** to display images based on sensor data
 
-You will need:
-+ A web browser for the SenseHAT emulator
-
-Optional:
-+ A Raspberry Pi computer
-+ A SenseHAT
-
-[[[rpi-sensehat-attach]]]
-
-**Tip**: The colour sensor is only available on the latest version of the SenseHAT. You can use the emulator as an alternative. 
-
 --- no-print ---
 --- task ---
 ### Click Run and try it
@@ -40,3 +29,14 @@ Change the colour sensor colour and the humidity values to see what happens to t
 --- print-only ---
 ![Completed project](images/solution.PNG)
 --- /print-only ---
+
+You will need:
++ A web browser for the SenseHAT emulator
+
+Optional:
++ A Raspberry Pi computer
++ A SenseHAT
+
+[[[rpi-sensehat-attach]]]
+
+**Tip**: The colour sensor is only available on the latest version of the SenseHAT. You can use the emulator as an alternative. 

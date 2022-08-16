@@ -26,11 +26,10 @@ Enter the code `def chameleon():` to define your `chameleon` function.
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 19
-line_highlights: 21
+line_number_start: 18
+line_highlights: 19
 ---
 # Chameleon
-
 def chameleon():
 --- /code ---
 
@@ -38,7 +37,7 @@ def chameleon():
 
 --- task ---
 
-Inside your `def chameleon` function. Enter code to create a variable called `c` that will store the colour of the chameleon. 
+Inside your `chameleon` function. Enter code to create a variable called `c` that will store the colour of the chameleon. 
 
 Set the colour to green `(0, 255, 0)`.
 
@@ -47,11 +46,10 @@ Set the colour to green `(0, 255, 0)`.
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 19
-line_highlights: 23
+line_number_start: 18
+line_highlights: 21
 ---
 # Chameleon
-
 def chameleon():
   
   c = (0, 255, 0) # Store the colour of the chameleon in the variable called c
@@ -61,54 +59,22 @@ def chameleon():
 
 --- task ---
 
-Underneath the variable line of code, create a list to draw your chameleon. 
+Underneath the variable line of code, create a list to draw your chameleon and add a line of code to display the chameleon on the LED matrix. 
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 19
-line_highlights: 25-33
+line_number_start: 18
+line_highlights: 23-33
 ---
 # Chameleon
-
 def chameleon():
   
   c = (0, 255, 0) # Store the colour of the chameleon in the variable called c
 
-  chameleon = [ 
-    b, b, b, b, b, b, b, b, 
-    b, c, b, b, b, b, b, b, 
-    c, b, c, c, c, c, b, b, 
-    c, c, c, c, c, c, c, b, 
-    b, b, c, c, c, c, c, b, 
-    b, c, b, c, b, b, c, b, 
-    b, b, b, b, b, c, b, b, 
-    b, b, b, b, c, b, b, b]
---- /code ---
-
---- /task ---
-
---- task ---
-
-Underneath the code to draw your chameleon. Enter code to **return** the chameleon list that will be used to draw the chameleon on the LED matrix.
-
---- code ---
----
-language: python
-filename: main.py
-line_numbers: true
-line_number_start: 19
-line_highlights: 35
----
-# Chameleon
-
-def chameleon():
-  
-  c = (0, 255, 0) # Store the colour of the chameleon in the variable called c
-
-  chameleon = [
+  image = [ 
     b, b, b, b, b, b, b, b, 
     b, c, b, b, b, b, b, b, 
     c, b, c, c, c, c, b, b, 
@@ -118,7 +84,7 @@ def chameleon():
     b, b, b, b, b, c, b, b, 
     b, b, b, b, c, b, b, b]
 
-  return chameleon
+  sense.set_pixels(image)
 --- /code ---
 
 --- /task ---
@@ -132,11 +98,10 @@ Find your `while` loop and add a `sleep(1)` line of code to make sure that the h
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 73
-line_highlights: 84
+line_number_start: 83
+line_highlights: 93
 ---
 # Display images based on humidity and colour sensor readings
-
 while True: # Forever
 
   humidity = sense.get_humidity() # Take a reading from the humidity sensor
@@ -153,30 +118,28 @@ while True: # Forever
 
 --- task ---
 
-Leave a space underneath the `sleep(1)` line of code and enter code that will create a variable for the `sensed_colour` and draw the chameleon on the LED matrix. 
+Underneath the `sleep(1)` line of code and enter code that will call the chameleon on function. 
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 73
-line_highlights: 85-87
+line_number_start: 83
+line_highlights: 94
 ---
 # Display images based on humidity and colour sensor readings
-
 while True: # Forever
 
   humidity = sense.get_humidity() # Take a reading from the humidity sensor
   if humidity > 75: # If the reading is higher than 75
-    sense.set_pixels(humidity_high) # Display the humidity high image
+    humidity_high() # Display the humidity high image
   elif humidity < 40: # If the reading is less than 40
-    sense.set_pixels(humidity_low)
+    humidity_low() # Display the humidity low image
   else:
-    sense.set_pixels(humidity_medium) # Display the medium humidity image
+    humidity_medium() # Display the humidity medium image
   sleep(1)
-  
-  sense.set_pixels(chameleon()) # Draw the chameleon 
+  chameleon() # Draw the chameleon 
 --- /code ---
 
 --- /task ---
@@ -190,10 +153,10 @@ Add another `sleep(1)` to the bottom of your `while` loop to allow you to see th
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 86
-line_highlights: 87
+line_number_start: 94
+line_highlights: 95
 ---
-  sense.set_pixels(chameleon()) # Draw the chameleon using the sense colour variable
+  chameleon() # Draw the chameleon
   sleep(1)
 --- /code ---
 

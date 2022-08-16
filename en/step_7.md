@@ -1,9 +1,6 @@
 ## Upgrade your project
 
-<div style="display: flex; flex-wrap: wrap">
-<div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
 If you have time then you can use these ideas to help your extend your chameleon lights project further!
-</div>
 
 --- task ---
 
@@ -15,6 +12,8 @@ You could:
       - A tap
       - A letter (e.g. H, M, F)
 + Create a second function for the chameleon where the tail moves. 
+
+[[[design-template]]]
 
 [[[draw-own-image-sensehat]]]
 

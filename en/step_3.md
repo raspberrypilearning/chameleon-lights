@@ -2,7 +2,7 @@
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will display images on the LED Matrix to reflect the humidity reading. 
+Display images on the LED Matrix to reflect the humidity reading. 
 </div>
 <div>
 ![A short animation showing the humidity slider being scrolled to the right and the image on the SenseHAT changing to an half filled water droplet.](images/humidity-medium.gif){:width="300px"}
@@ -19,20 +19,20 @@ Your project is going to use a water droplet image to demonstrate the **humidity
 
 Find the comment `# Colour palette`.
 
-Enter the code to set up the variables in your colour palette.
+Enter the code to set up the variables needed for your colour palette.
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 14
-line_highlights: 16-17
+line_number_start: 12
+line_highlights: 13-15
 ---
 # Colour palette
-
 w = (0, 0, 255) # Water drop colour
 b = (255, 255, 255) # Background colour
+c = (0, 0, 0) # Black
 --- /code ---
 
 --- /task ---
@@ -42,27 +42,30 @@ b = (255, 255, 255) # Background colour
 
 Find the `# Humidity low` comment.
 
-Create a list to represent a low humidity image. 
+Create a **function** that contains a **list** to represent a low humidity image and displays it on the SenseHAT LED matrix. 
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 23
-line_highlights: 25-33
+line_number_start: 22
+line_highlights: 23-35
 ---
 # Humidity low
+def humidity_low():
 
-humidity_low = [
-  b, b, b, b, w, b, b, b, 
-  b, b, b, w, w, b, b, b, 
-  b, b, w, b, b, w, b, b, 
-  b, b, w, b, b, w, b, b, 
-  b, w, b, b, b, b, w, b, 
-  b, w, b, b, b, b, w, b, 
-  b, b, w, b, b, w, b, b, 
-  b, b, b, w, w, b, b, b]
+  image = [
+    b, b, b, b, w, b, b, b, 
+    b, b, b, w, w, b, b, b, 
+    b, b, w, b, b, w, b, b, 
+    b, b, w, b, b, w, b, b, 
+    b, w, b, b, b, b, w, b, 
+    b, w, b, b, b, b, w, b, 
+    b, b, w, b, b, w, b, b, 
+    b, b, b, w, w, b, b, b]
+  
+  sense.set_pixels(image)
 --- /code ---
 
 --- /task ---
@@ -71,27 +74,30 @@ humidity_low = [
 
 Find the `# Humidity medium` comment.
 
-Create a list to represent a medium humidity image.
+Create a **function** that contains a **list** to represent a medium humidity image and displays it on the SenseHAT LED matrix.
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 35
-line_highlights: 37-45
+line_number_start: 38
+line_highlights: 39-5
 ---
 # Humidity medium
+def humidity_medium():
 
-humidity_medium = [
-  b, b, b, b, w, b, b, b, 
-  b, b, b, w, w, b, b, b, 
-  b, b, w, b, b, w, b, b, 
-  b, b, w, b, b, w, b, b, 
-  b, w, b, b, b, b, w, b, 
-  b, w, w, w, w, w, w, b, 
-  b, b, w, w, w, w, b, b, 
-  b, b, b, w, w, b, b, b]
+  image = [
+    b, b, b, b, w, b, b, b, 
+    b, b, b, w, w, b, b, b, 
+    b, b, w, b, b, w, b, b, 
+    b, b, w, b, b, w, b, b, 
+    b, w, b, b, b, b, w, b, 
+    b, w, w, w, w, w, w, b, 
+    b, b, w, w, w, w, b, b, 
+    b, b, b, w, w, b, b, b]
+  
+  sense.set_pixels(image)
 --- /code ---
 
 --- /task ---
@@ -100,27 +106,30 @@ humidity_medium = [
 
 Find the `# Humidity high` comment.
 
-Create a list to represent a high humidity image.
+Create a **function** that uses a **list** to represent a high humidity image and displays it on the SenseHAT LED matrix.
 
 --- code ---
 ---
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 47
-line_highlights: 49-57
+line_number_start: 54
+line_highlights: 55-67
 ---
 # Humidity high
+def humidity_high():
 
-humidity_high = [
-  b, b, b, b, w, b, b, b, 
-  b, b, b, w, w, b, b, b, 
-  b, b, w, w, w, w, b, b, 
-  b, b, w, w, w, w, b, b, 
-  b, w, w, w, w, w, w, b, 
-  b, w, w, w, w, w, w, b, 
-  b, b, w, w, w, w, b, b, 
-  b, b, b, w, w, b, b, b]
+  image = [
+    b, b, b, b, w, b, b, b, 
+    b, b, b, w, w, b, b, b, 
+    b, b, w, w, w, w, b, b, 
+    b, b, w, w, w, w, b, b, 
+    b, w, w, w, w, w, w, b, 
+    b, w, w, w, w, w, w, b, 
+    b, b, w, w, w, w, b, b, 
+    b, b, b, w, w, b, b, b]
+    
+  sense.set_pixels(image)
 --- /code ---
 
 --- /task ---
@@ -134,11 +143,10 @@ Delete the line of code `sense.show_message(str(humidity))` as this is no longer
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 59
-line_highlights: 64
+line_number_start: 70
+line_highlights: 74
 ---
 # Display images based on humidity and colour sensor readings
-
 while True: # Forever
 
   humidity = round(sense.get_humidity(),1) # Take a reading from the humidity sensor
@@ -156,16 +164,15 @@ Underneath your code for reading the humidity sensor, add in code that will disp
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 59
-line_highlights: 64-65
+line_number_start: 70
+line_highlights: 74-75
 ---
 # Display images based on humidity and colour sensor readings
-
 while True: # Forever
 
   humidity = sense.get_humidity() # Take a reading from the humidity sensor
   if humidity > 75: # If the reading is higher than 75
-    sense.set_pixels(humidity_high) # Display the humidity high image
+    humidity_high() # Display the humidity high image
 --- /code ---
 
 --- /task ---
@@ -189,18 +196,17 @@ Underneath your `sense.set_pixels(humidity_high)` code, enter the code for check
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 59
-line_highlights: 66-67
+line_number_start: 70
+line_highlights: 76-77
 ---
 # Display images based on humidity and colour sensor readings
-
 while True: # Forever
 
   humidity = sense.get_humidity() # Take a reading from the humidity sensor
   if humidity > 75: # If the reading is higher than 75
-    sense.set_pixels(humidity_high) # Display the humidity high image
+    humidity_high() # Display the humidity high image
   elif humidity < 40: # If the reading is less than 40
-    sense.set_pixels(humidity_low)
+    humidity_low() # Display the humidity low image
 --- /code ---
 
 --- /task ---
@@ -224,20 +230,19 @@ Underneath your `sense.set_pixels(humidity_low)` code, enter code to display an 
 language: python
 filename: main.py
 line_numbers: true
-line_number_start: 59
-line_highlights: 68-69
+line_number_start: 70
+line_highlights: 78-79
 ---
 # Display images based on humidity and colour sensor readings
-
 while True: # Forever
 
   humidity = sense.get_humidity() # Take a reading from the humidity sensor
   if humidity > 75: # If the reading is higher than 75
-    sense.set_pixels(humidity_high) # Display the humidity high image
+    humidity_high() # Display the humidity high image
   elif humidity < 40: # If the reading is less than 40
-    sense.set_pixels(humidity_low)
+    humidity_low() # Display the humidity low image
   else:
-    sense.set_pixels(humidity_medium) # Display the medium humidity image
+    humidity_medium() # Display the humidity medium image
 --- /code ---
 
 --- /task ---
